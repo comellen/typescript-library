@@ -23,14 +23,18 @@
 
 
 //!@#$%^&*   tuples   *&^%$#@!
+
 let usrnmpass: [string, number];
 usrnmpass = ['connonBallSteve', 123456];
 
 
+
 //!@#$%^&*   enums   *&^%$#@!
+
 enum WeaponType { Sword, Sabre, Axe, Spear, Mace, Dagger, Bow };
 let weapon: WeaponType = WeaponType.Dagger;
 console.log(weapon);  // 5
+
 
 enum CardType { Ace = 13, Two, Three, Four };
 let card: CardType = CardType.Three;
@@ -38,18 +42,54 @@ let cardTwo: string = CardType[16];
 console.log(card, cardTwo);  // 15 "Four"
 
 
+
 //!@#$%^&*   union types   *&^%$#@!
+
 let iDontKnow: number | string;
 iDontKnow = 1234;
 iDontKnow = 'something';
 
+
+
 //!@#$%^&*   functions   *&^%$#@!
-function demoFunc(something: string) : void {
-    console.log(something);
+
+function demoFunc(something: string) : string {
+    return something;
 }
 demoFunc('1');
 
 
-const demoTwo = (somethingElse: boolean) : boolean => somethingElse;
+const demoTwo = (something: boolean, somethingElse?: string, somethingElseElse?: number) : void => {
+    console.log(something, somethingElse);
+}
+demoTwo(true, 'cool beans', 10);  // true 'cool beans'
 
-demoTwo(false);
+
+
+//!@#$%^&*   classes   *&^%$#@!
+class Person {
+    firstName: string;
+    lastName: string;
+
+    sayHi() {
+        console.log('Hello, my name is', this.firstName);
+    }
+}
+
+let tyler: Person = new Person();
+
+tyler.firstName = 'Titty-T';
+tyler.lastName = 'ShelShel';
+
+console.log(tyler.firstName, tyler.lastName);
+
+let cory: Person = new Person();
+
+cory.firstName = 'C-Money';
+cory.lastName = 'C-Money';
+
+console.log(cory.firstName, cory.lastName);
+
+console.log(tyler, cory);
+
+tyler.sayHi();

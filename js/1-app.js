@@ -46,9 +46,30 @@ iDontKnow = 1234;
 iDontKnow = 'something';
 //!@#$%^&*   functions   *&^%$#@!
 function demoFunc(something) {
-    console.log(something);
+    return something;
 }
 demoFunc('1');
-var demoTwo = function (somethingElse) { return somethingElse; };
-demoTwo(false);
+var demoTwo = function (something, somethingElse, somethingElseElse) {
+    console.log(something, somethingElse);
+};
+demoTwo(true, 'cool beans', 10); // true 'cool beans'
+//!@#$%^&*   classes   *&^%$#@!
+var Person = /** @class */ (function () {
+    function Person() {
+    }
+    Person.prototype.sayHi = function () {
+        console.log('Hello, my name is', this.firstName);
+    };
+    return Person;
+}());
+var tyler = new Person();
+tyler.firstName = 'Titty-T';
+tyler.lastName = 'ShelShel';
+console.log(tyler.firstName, tyler.lastName);
+var cory = new Person();
+cory.firstName = 'C-Money';
+cory.lastName = 'C-Money';
+console.log(cory.firstName, cory.lastName);
+console.log(tyler, cory);
+tyler.sayHi();
 //# sourceMappingURL=1-app.js.map
