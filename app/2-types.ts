@@ -49,3 +49,9 @@ console.log(typeof dataFromThirdParty);
 /****************
  * 03 - Union Types
  ****************/
+
+let x: number | string;
+let y: number | null;
+
+x = '1234';
+x = 1234;

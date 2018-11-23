@@ -34,4 +34,8 @@ console.log(typeof dataFromThirdParty);
 /****************
  * 03 - Union Types
  ****************/
+var x;
+var y;
+x = '1234';
+x = 1234;
 //# sourceMappingURL=2-types.js.map
